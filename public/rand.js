@@ -202,7 +202,7 @@
                     return !0
                 }
             ;
-        var y, m = "resize.webflow orientationchange.webflow load.webflow";
+        var y, m = "resize.wf_func orientationchange.wf_func load.wf_func";
         function A(t, e) {
             var n = []
                 , r = {};
@@ -234,7 +234,7 @@
                 c.on("load", y.resolve)
         }
         r.resize = A(c, m),
-            r.scroll = A(c, "scroll.webflow resize.webflow orientationchange.webflow load.webflow"),
+            r.scroll = A(c, "scroll.wf_func resize.wf_func orientationchange.wf_func load.wf_func"),
             r.redraw = A(),
             r.location = function (t) {
                 window.location = t
@@ -4285,7 +4285,7 @@
         "use strict";
         var r = n(5);
         r.define("brand", t.exports = function (t) {
-            var e, n = {}, i = document, o = t("html"), a = t("body"), u = ".w-webflow-badge", c = window.location, s = /PhantomJS/i.test(navigator.userAgent), f = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange";
+            var e, n = {}, i = document, o = t("html"), a = t("body"), u = ".w-wf_func-badge", c = window.location, s = /PhantomJS/i.test(navigator.userAgent), f = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange";
             function l() {
                 var n = i.fullScreen || i.mozFullScreen || i.webkitIsFullScreen || i.msFullscreenElement || Boolean(i.webkitFullscreenElement);
                 t(e).attr("style", n ? "display: none !important;" : "")
@@ -4299,13 +4299,13 @@
             }
             return n.ready = function () {
                 var n, r, a, u = o.attr("data-wf-status"), E = o.attr("data-wf-domain") || "";
-                /\.webflow\.io$/i.test(E) && c.hostname !== E && (u = !0),
-                    u && !s && (e = e || (n = t('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs"),
-                        r = t("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon.f67cd735e3.svg").attr("alt", "").css({
+                /\.wf_func\.io$/i.test(E) && c.hostname !== E && (u = !0),
+                    u && !s && (e = e || (n = t('<a class="w-wf_func-badge"></a>').attr("href", "https://wf_func.com?utm_campaign=brandjs"),
+                        r = t("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/wf_func-badge-icon.f67cd735e3.svg").attr("alt", "").css({
                             marginRight: "8px",
                             width: "16px"
                         }),
-                        a = t("<img>").attr("src", "https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg").attr("alt", "Made in WF_func"),
+                        a = t("<img>").attr("src", "https://d1otoma47x30pg.cloudfront.net/img/wf_func-badge-text.6faa6a38cd.svg").attr("alt", "Made in WF_func"),
                         n.append(r, a),
                         n[0]),
                         d(),
@@ -4331,7 +4331,7 @@
      * _.contains
      * _.delay
      * _.defer
-     * _.throttle (webflow)
+     * _.throttle (wf_func)
      * _.debounce
      * _.keys
      * _.has
@@ -4576,7 +4576,7 @@
                     o.off(c, l),
                     function (t) {
                         var e = window.document.createElement("iframe");
-                        e.src = "https://webflow.com/site/third-party-cookie-check.html",
+                        e.src = "https://wf_func.com/site/third-party-cookie-check.html",
                             e.style.display = "none",
                             e.sandbox = "allow-scripts allow-same-origin";
                         var n = function n(r) {
@@ -4593,7 +4593,7 @@
                             window.document.body.appendChild(e)
                     }(function (e) {
                         t.ajax({
-                            url: _("https://editor-api.webflow.com/api/editor/view"),
+                            url: _("https://editor-api.wf_func.com/api/editor/view"),
                             data: {
                                 siteId: a.attr("data-wf-site")
                             },
@@ -4636,7 +4636,7 @@
                 n
             }
             function v(t) {
-                return t.indexOf("//") >= 0 ? t : _("https://editor-api.webflow.com" + t)
+                return t.indexOf("//") >= 0 ? t : _("https://editor-api.wf_func.com" + t)
             }
             function _(t) {
                 return t.replace(/([^:])\/\//g, "$1/")
